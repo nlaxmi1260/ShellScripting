@@ -1,0 +1,510 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Scripting Turorial</title>
+ </head>
+ <body>
+    <ol>Shell Scripting Turorial
+        <li>touch first-shell-script.sh - extenstion for shell script file, to create file</li>
+        <li>ls - listing the files or folders</li>
+        <li>ls -ltr - with timestap</li>
+        <li>man ls - manual like help</li>
+        <li>man touch -manuval for touch command</li>
+        <li>vi first-shell-script.sh - creates and opens the file</li>
+        <li>vim first-shell-script.sh - creates and opens the file</li>
+        <li>#!/bin/bash or dash or sh or ksh or AX- shebang after bin are the executables- widely used is bash</li>
+        <ol>editing the file
+            <li>esc i - we are in insert mode</li>
+            <li>esc :wq! - save the file</li>
+            <li>esc :q! - quit without saving the changes</li>
+            <li>cat first-shell-script.sh - used to print the file content</li>
+        </ol>
+        <li>sh first-shell-script.sh - to execute shell file</li>
+        <li>./ first-shell-script.sh - to execute shell file</li>
+        <li>we need to grant permissions to execute the shell file</li>
+        <li>$ chmod - grants permissions to a file ch is for change,</li>
+        <li>chmod is divided into three categories, root user, which group and what are your permissions</li>
+        <li>chmod 777 first-shell-script - grants for all users[everyone]</li>
+        <li>7 for my self (owner), 7 for my group, 7 for all users</li>
+        <li>4 is for read, 2 for write, 1 for execute</li>
+        <li>history</li>
+        <li>What is shbang in shell scripting?why shbang matters in shell scripting
+            <ol>This <b>#!</b> is called shebang or hashbang. The shebang plays an important role in shell scripting
+                <li>The shebang is the combination of the # (pound key) and ! (exclamation mark). This character combination has a special meaning when it is used in the very first line of the script. It is used to specify the interpreter with which the given script will be run by default.
+
+                </li>
+                <li>The #! is surely special because # is used for comments in shell scripts but here it has a special meaning.</li>
+                <li>The shell scripts include #!/bin/bash line at the beginning of the script.
+                    Because there are several shells available for Linux and UNIX systems. While these shells have mostly common syntax, they do have different syntax or different way of handling things.This is why it becomes important to specify the correct shell interpreter in the script, otherwise some scripts may produce different results when run in different shells.</li>
+                    <li>specifying the correct shell interpreter with shebang operator is important</li>
+                    <li>It is important that there is no space between # and !. You CANNOT use it like this: # !/bin/bash</li>
+                    <li>#! has to be on the first line, otherwise the shebang line will be treated as comment. You cannot even have a blank line before it.</li>
+            </ol>
+        </li>
+        <li>!/bin/bash echo "my name is mreddy"</li>
+        <li>vim sample-shell-script.sh</li>
+        <ul>create a folder in that create two files
+            <li>#!/bin/bash </li>
+            <li># create a folder
+                <br>
+                mkdir mreddy
+            </li>
+            <li># create two files this is comment <br>
+                cd mreddy </li>
+            <li> touch firstfile secondfile</li>
+        </ul>
+        <li>chmod 777 sample-shell-script.sh</li>
+        <li> sh sample-shell-script.sh</li>
+        <ol> John works as Devops engineer find 10000 linux VMs node health - cpu, memory, processors
+               <li> John writes a shell script and excute to get the node details</li>
+               <li>(or) John writes a shell script and can run automatically run in a day to get the health of all 10000 vms</li>
+        </ol>
+            <li>if-else code syntax <br>
+                vim ifelse.sh <br>
+                if [expression]<br>
+                then <br>
+                abc<br>
+                else<br>
+                xyz<br>
+                fi
+            </li>
+            <li> <b>find greater number between two numbers</b> <br>
+                a=4<br>
+                b=10<br>
+                if [ %a > %b ]<br>
+                then<br>
+                echo "a is greater than b"<br>
+                else<br>
+                echo "b is greater than a"<br>
+                fi
+            </li>
+        <li>for loop syntax
+            <code>for loop <br>
+                for i in {1.100}; do echo $i; done</code>
+        </li>
+        <li>Difference between #!/bin/sh and #!/bin/dash
+                <table border="1">
+                    <thead>
+                    <th>#!/bin/sh</th>
+                    <th>#!/bin/bash</th>
+                    </thead>
+                    <tr>
+                    <td>
+                        earlier in some distributions #!/bin/sh was linked to #!/bin/bash
+                    </td>
+                    <td>
+                        Now a days in some discributions #!/bin/sh is linked to #!/bin/dash
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        if #!/bin/sh is linked to #!/bin/bash it won't work where #!/bin/sh
+                        is linked to #!/bin/dash
+                    </td>
+                    <td>where dash is default bash commands won't work</td>
+                    </tr>
+                </table>
+        </li>
+        <li>
+                <table border="1">
+                    <thead>
+                    <th>Serial number</th>
+                    <th>Command</th>
+                    <th>Description</th>
+                    </thead>
+                    <tr>
+                    <td>1</td>
+                    <td>$ touch &lt;filename&gt;</td>
+                    <td>command to create a file</td>
+                    </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>$ vim &lt;filename&gt;</td>
+                    <td>command to write in a file esc i, esc :wq!</td>
+                    </tr>
+                    <tr>
+                    <td>3</td>
+                    <td>$ cat &lt;filename&gt;</td>
+                    <td>command to print file content</td>
+                    </tr>
+                    <tr>
+                    <td>4</td>
+                    <td>$ ls</td>
+                    <td>command to list files and directory</td>
+                    </tr>
+                    <tr>
+                    <td>5</td>
+                    <td>$ chmod &lt;permission number&gt; &lt;filename&gt;</td>
+                    <td>command to grant permissions to user, group and for everyone</td>
+                    </tr>
+                    <tr>
+                    <td>6</td>
+                    <td>$ man &lt;command-name&gt;</td>
+                    <td>command to get manual for a command</td>
+                    </tr>
+                    <tr>
+                    <td>7</td>
+                    <td>$ history</td>
+                    <td>command to get the history of commands got executed</td>
+                    </tr>
+                    <tr>
+                    <td>8</td>
+                    <td>$ pwd</td>
+                    <td>command to get present working folder</td>
+                    </tr>
+                    <tr>
+                    <td>9</td>
+                    <td>$ mkdir &lt;foldername&gt;</td>
+                    <td>command to create a folder</td>
+                    </tr>
+                    <tr>
+                    <td>10</td>
+                    <td>$ cd &lt;foldername&gt;</td>
+                    <td>command to change directory</td>
+                    </tr>
+                    <tr>
+                    <td>11</td>
+                    <td>$ cd ..</td>
+                    <td>command to move to previous directory</td>
+                    </tr>
+                    <tr>
+                    <td>12 *</td>
+                    <td>$ nproc</td>
+                    <td>command to get the processes</td>
+                    </tr>
+                    <tr>
+                    <td>13 *</td>
+                    <td>$ free</td>
+                    <td>command to get the memory</td>
+                    </tr>
+                    <tr>
+                    <td>14</td>
+                    <td>$ df</td>
+                    <td>command to get the free memory</td>
+                    </tr>
+                    <tr>
+                    <td>15</td>
+                    <td>$ top</td>
+                    <td>command to get the processors and memory details</td>
+                    </tr>
+                    <tr>
+                    <td>16</td>
+                    <td>ctrl + c</td>
+                    <td>command to stop executing shell script</td>
+                    </tr>
+                    <tr>
+                    <td>17</td>
+                    <td>$ ps</td>
+                    <td>command to get processes</td>
+                    </tr>
+                    <tr>
+                    <td>18 </td>
+                    <td>$ ps -ef</td>
+                    <td>command to get all processes details in full format</td>
+                    </tr>
+                    <tr>
+                    <td>19</td>
+                    <td>$ ps -ef | grep "amazon</td>
+                    <td>
+                        command to get only amazon processes details in full format, grep
+                        will collect amazon processes from the first command ps -ef | is
+                        used to connect first and second command.
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>20</td>
+                    <td>$ date | echo "today is"</td>
+                    <td>
+                        date is system command and sends to stdin, | cannot get the input
+                        from stdid output is today is
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>21 *</td>
+                    <td>$ awk</td>
+                    <td>
+                        it can give specific columns e.g. ps -ef | grep amazon | awk -F" "
+                        '{print $2}'
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>22</td>
+                    <td>$ curl websitename</td>
+                    <td>command to get internet data or calling an API</td>
+                    </tr>
+                    <tr>
+                    <td>23 *</td>
+                    <td>$ WGET</td>
+                    <td>command to downloads the content</td>
+                    </tr>
+                    <tr>
+                    <td>24 *</td>
+                    <td>$ sudo su [username]</td>
+                    <td>
+                        command to change user, substitute user todo, super hero root user
+                        su switch user
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>25 *</td>
+                    <td>$ sudo find / -name pam</td>
+                    <td>
+                        command to search file by mname pam, sudu to elivate permissions to
+                        search across file system
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>26 *</td>
+                    <td>
+                        $ trap " echo dont use the the ctrl+c" SIGINT^C one more e.g. is
+                        trap "rm -rf *^CSIGINt to delete the records which are half imported
+                    </td>
+                    <td>
+                        command to trap signals, even after ctrl + c don't stop the command
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>27 *</td>
+                    <td>$ kill -9 9999</td>
+                    <td>command to kill the process 9999 it uses signal sigkill</td>
+                    </tr>
+                </table>
+        </li>
+
+          <li>$ touch nodeHealth.sh
+            <code>
+              #!/bin/bash <br />
+    
+              ################ <br />
+              # Author : mreddy <br />
+              # Date : 24/01/24 <br />
+              # <br />
+              # This script outputs the node health <br />
+              # <br />
+              # Version: v1 <br />
+              ################ <br />
+    
+              set -x # debug mode shows the commands and prints the output echo set
+              -e # exit the script when there is an error set -0 pipefail "Print the
+              disk space " <br />
+              df -h <br />
+              echo "Print the memory " <br />
+              free -g <br />
+              echo "Print the cpu details " <br />
+              nproc <br />
+    
+              ps -ef | grep amazon | awk -F" " '{print $2}' <br />
+    
+              curl
+              https://raw.githubusercontent.com/iam-veeramalla/sandbox/main/log/dummylog01122022.log
+              | grep ERROR <br />
+    
+              WGET
+              https://raw.githubusercontent.com/iam-veeramalla/sandbox/main/log/dummylog01122022.log
+            </code>
+          </li>
+          <li>Shell Scripting QA</li>
+          <ol>
+            <li>List some of the commonly used shell commands?</li>
+            <ol>
+              <li>ls</li>
+              <li>cp</li>
+              <li>mv -to know the source directory</li>
+              <li>mkdir</li>
+              <li>touch</li>
+              <li>vim</li>
+              <li>grep -used to filter output from the firstone</li>
+              <li>find -to find the path</li>
+              <li>awk -used to filter the particular line output</li>
+              <li>top</li>
+              <li>df</li>
+              <li> * sar</li>
+              <li> * netcat</li>
+              <li> * routetrace</li>
+            </ol>
+            <li>Write a simple shell script to list all processes
+            <ol>
+              <li>ps -ef </li>
+              <li>ps -ef |awk -F " " '{print $2}'  ->to print particular column</li>
+            </ol>
+        </li>
+            <li>** Write a script to print only errors from a remote log
+                    <ol>think like all errors are stored in s3 bucket or google storage
+                    <li>Curl google.com | grep HREF</li>
+                    <li> example <br>
+                        Curl
+                        https://raw.githubusercontent.com/iam-veeramalla/sandbox/main/log/dummylog01122022
+                        | grep TRACE
+                    </li>
+                    <li>Curl, |, grep</li>
+                    <li>curl is used to get info from remote location</li>
+                    <li>
+                        | is combining two commands, output of the first command to second
+                        command
+                    </li>
+                    <li>grep is used to filter the result from first output</li>
+                    </ol>
+            </li>
+            <li> 
+              Write a shell script to print numbers divided by 3 & 5 and not 15
+                    <ol>
+                    <li>Print even numbers -> divisible by 2</li>
+                    <li>Print odd numbers -> not divisible by 2</li>
+                    <li>Print numbers divisible by 3</li>
+                    <li>Print prime numbers</li>
+                    <li>
+                        divide the question into multiple parts lets take numbers from 1 to
+                        15
+                    </li>
+                    <li>Divisible by 3 -> 3, 6, 9, 12, 15</li>
+                    <li>Divisible by 5 -> 5, 10, 15</li>
+                    <li>And not divisible by 15 -> 15</li>
+                    <li>vim samplescript.sh</li>
+                    <li>
+                        <code>
+                        #!/bin/bash <br />
+                        ## provide meta data <br />
+                        # explain steps divisible by 3, divisible by 5, not divisible by
+                        15 range is 1 to 100<br />
+                        for i in {1..100}; do <br />
+                        if ['expr $i % 3' == 0] || [`expr $i % 5' == 0] && [`expr $i % 15
+                        != 0]; <br />
+                        then <br />
+                        echo $i <br />
+                        fi <br />
+                        done <br />
+                        </code>
+                        :wq
+                    </li>
+                    <li>$ chmod 777 samplescript.sh</li>
+                    <li>$ sh samplescript.sh</li>
+                    </ol>
+            </li>
+            <li><b> wc -l :return the number of lines</b></li>
+            <li>Write a script to print number of "S in mississippi
+                    <ol>
+                    <li>vim mississipi.sh</li>
+                        <li>
+                                <code>
+                                #!/bin/bash <br />
+                                x = mississippi <br />
+                                grep -o "s" <<<"$x" | wc -l   # -o is only, wc is for wordcount, l
+                                is line; <br />
+                                </code>
+                        </li>
+                    </ol>
+            </li>
+            <li>How will you debug the shell script? 
+                    <ol>
+                    <li>set -x # run shell script in debug mode</li>
+                    </ol>
+            </li>
+            <li>What is crontab in Linux? Can you provide an example of usage 
+                    <ol>crontab is like a scheduler
+                            <li>Your are a Linux admin, report node health</li>
+                            <li>
+                                Crontab like a scheduler which will run everyday on a scheduled time
+                                for e.g 6 pm
+                            </li>
+                    </ol>
+            </li>
+            <li>How to open a read-only file?
+                    <ol>normally we can open a file
+                        <li>vim filename.extension</li>
+                        <li>vim -r filename.extension to open a file in read-only mode</li>
+                    </ol>
+            </li>
+            <li>** What is the difference between soft and hard link ?
+                    <ol>
+                    <li>Create a file and save a file then it is saved in the memory.
+                        If you want to reuse the same file multiple times we can use soft
+                        and hard links
+                    </li>
+                    <li>
+                        Use hard link if you want to modify and reuse existing file: <b> ln </b>
+                        command is the to create hard link
+                    </li>
+                    <li>
+                        even if the original copy is deleted hard link will work as it uses
+                        the copy of the hard link
+                    </li>
+                    <li>
+                        while soft link is not like that, if original file is deleted soft
+                        link won't work.we use soft links to create alais </li>
+                    </ol>
+            </li>
+            <li>** What is the difference between break and continue statements?
+                <ol>
+                <li>BREAK is the braking the execution</li>
+                <li>
+                    CONTINUE - continuning the execution (SKIP) -> Skip this and
+                    continue the next
+                </li>
+                <li>3, 5, 15 (continue)</li>
+                <li>Break the execution on a specific condition</li>
+                </ol>
+            </li>
+            <li> *** What are some disadvantages of Shell scripting?
+                <ol>
+                <li>
+                    Errors are frequent and costly, and a single error can alter the
+                    command
+                </li>
+                <li>The execution speed is slow</li>
+                <li>
+                    Bugs or inadequacies in the language's syntax or implementation
+                </li>
+                <li>Large, complex tasks aren't well suited to it.</li>
+                <li>
+                    Contrary to other scripting language, etc. it provides a minimal
+                    data structure.
+                </li>
+                <li>Every time a shell is exectued, a new process is launched.</li>
+                <li>set -u</li>
+                </ol>
+            </li>
+            <li>What are the different types of loops and when to use ?
+                    <ol>
+                        <li>for</li>
+                        <li>while</li>
+                        <li>do loop</li>
+                    </ol>
+            </li>
+            <li>Is bash dynamic or statically typed and why?
+                <ol>
+                <li>GO is statically typed language</li>
+                <li>Python is dynamic typed language</li>
+                <li>by default shell scripting is dynamically typed language</li>
+                </ol>
+            </li>
+            <li>Explain about a network troubleshooting tools?
+                    <ol>some of network troubleshooting tools are :
+                            <li>traceroute google.com :
+                                this command give the different hops taken to reach the destination
+                            </li>
+                            <li>tracepath google.com
+                                tracepath also used to help to troubleshoot network issues tracepath
+                                need to be installed.
+                            </li>
+                            <li>tracepath does't not required root access</li>
+                    </ol>
+            </li>
+            <li>How will you sort item of names in a file?
+                    <ol>
+                    <li>linux has sort command to sort</li>
+                    </ol>
+            </li>
+            <li> ** How will you manage logs of a system that generate huge log files
+              everyday?
+                <ol>
+                        <li> <b>logrotate command </b> </li>
+                        <li>gzip, zip , tar and delete after 30 days</li>
+                </ol>
+            </li>
+            <li>how  <b>awk</b> is capable of replicating <b>grep</b> and <b>sed</b> functionality while additionally providing more features for advanced text processing.</li>
+          </ol>
+    </ol>
+ </body>
+ </html>
